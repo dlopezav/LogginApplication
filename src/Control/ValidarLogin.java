@@ -5,6 +5,7 @@
  */
 package Control;
 
+import DAO.UsuarioDAO;
 import Entidad.Sistema;
 import Entidad.Usuario;
 import Frontera.FramePrincipal;
@@ -15,9 +16,11 @@ import Frontera.FramePrincipal;
  */
 public class ValidarLogin {
 
-    private Sistema sistema = FramePrincipal.sistema;
+    private UsuarioDAO dao = new UsuarioDAO();
     
     public ValidarLogin() {
+        
+        
     }
     public String verificarlogin (Usuario usuario){
         if(!verificarLongitudNombre(usuario.getNombre())){
@@ -26,10 +29,8 @@ public class ValidarLogin {
         if(!verificarLongitudPassword(usuario.getPassword())){
             return("Longitud contraseña incorrecta");
         }
-        for (Usuario user : sistema.getUsuarios()) {
-            if(user.getNombre().equals(usuario.getNombre())&& user.getPassword().equals(usuario.getPassword())){
-                return "Bienvenido";
-            }
+        if (dao.leer(usuario)!= null){
+            return "Bienvenido";
         }
         return "Datos incorrectos";
     }
