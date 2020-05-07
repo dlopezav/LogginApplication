@@ -149,6 +149,14 @@ public class FramePrincipal extends javax.swing.JFrame {
         usuarios.add(c);
         
         sistema.setUsuarios(usuarios);
+        
+        for (Usuario usuario: sistema.getUsuarios()) {
+            System.out.println(usuario.getNombre());
+            System.out.println(usuario.getPassword());
+            System.out.println("-----------------");
+        }
+        
+        
     }
     
     
