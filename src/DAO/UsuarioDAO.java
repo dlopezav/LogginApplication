@@ -68,7 +68,7 @@ public class UsuarioDAO {
         }catch (NonUniqueResultException e){
             usuario = (Usuario) q.getResultList().get(0);
         }catch (Exception e){
-            e.printStackTrace();
+            
         }finally {
             em.close();
             return usuario;

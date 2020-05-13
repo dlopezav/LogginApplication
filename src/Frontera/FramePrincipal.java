@@ -130,31 +130,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
     }
     public void inicializacion(){
-        ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
         
-        
-        Usuario a = new Usuario();
-        Usuario b = new Usuario();
-        Usuario c = new Usuario();
-        
-        a.setNombre("Juan");
-        a.setPassword("1234");
-        b.setNombre("Pedro");
-        b.setPassword("123");
-        c.setNombre("Maria");
-        c.setPassword("12345");
-        
-        usuarios.add(a);
-        usuarios.add(b);
-        usuarios.add(c);
-        
-        sistema.setUsuarios(usuarios);
-        
-        for (Usuario usuario: sistema.getUsuarios()) {
-            System.out.println(usuario.getNombre());
-            System.out.println(usuario.getPassword());
-            System.out.println("-----------------");
-        }
         
         
     }
